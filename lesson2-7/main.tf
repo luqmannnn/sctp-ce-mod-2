@@ -60,7 +60,7 @@ module "security_group" {
 }
 
 resource "aws_ebs_volume" "ebs_1g" {
-  availability_zone = "us-east-1a"
+  availability_zone = module.ec2_instance.availability_zone # "us-east-1a"
   size              = 1
 
   tags = {
